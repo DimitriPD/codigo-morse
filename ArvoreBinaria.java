@@ -2,7 +2,7 @@ class ArvoreBinaria {
     private Node root;
 
     public ArvoreBinaria() {
-        this.root = new Node("  ", "ROOT");
+        this.root = new Node("             ", "ROOT");
         this.popularArvore();
     }
 
@@ -37,7 +37,7 @@ class ArvoreBinaria {
         }
     }
 
-    public String morseToChar(Node currentNode, String sequence, int iterator) {
+    private String morseToChar(Node currentNode, String sequence, int iterator) {
         if (iterator == sequence.length()) {
             return currentNode.getLetter();
         }
@@ -51,7 +51,7 @@ class ArvoreBinaria {
         return "";
     }
 
-    public String charToMorse(Node currentNode, String letter) {
+    private String charToMorse(Node currentNode, String letter) {
         if (currentNode != null) {
             String result = charToMorse(currentNode.getLeftNode(), letter);
             if (!result.isEmpty()) {
