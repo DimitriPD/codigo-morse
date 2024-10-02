@@ -75,7 +75,7 @@ class ArvoreBinaria {
         String[] sequences = morseMessage.split(" ");
 
         for (String sequence : sequences) {
-            if (sequence == "/") {
+            if (sequence.equals("/")) {
                 decoded += " ";
             } else {
                 decoded += this.morseToChar(this.root, sequence, 0);
@@ -90,7 +90,12 @@ class ArvoreBinaria {
 
         for (int i = 0; i < word.length(); i++) {
             String letter = String.valueOf(word.charAt(i));
-            encoded += this.charToMorse(this.root, letter) + " ";
+            System.out.println( "Letra: " + letter);
+            if (letter.equals(" ")) {
+                encoded += "/ ";
+            } else {
+                encoded += this.charToMorse(this.root, letter) + " ";
+            }
         }
         return encoded;
     }
