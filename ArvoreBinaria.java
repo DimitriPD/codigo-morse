@@ -90,7 +90,6 @@ class ArvoreBinaria {
 
         for (int i = 0; i < word.length(); i++) {
             String letter = String.valueOf(word.charAt(i));
-            System.out.println( "Letra: " + letter);
             if (letter.equals(" ")) {
                 encoded += "/ ";
             } else {
